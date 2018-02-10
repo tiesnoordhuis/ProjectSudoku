@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="css/styleties.css" rel="stylesheet">
   </head>
-  <body>
-    <div id="titleDiv">
-      Hello world!
+  <body class="mainTop">
+    <div class="mainTop">
+      <div id="titleDiv">
+        Hello world!
+      </div>
+      <input id="codeInput">
+      <button type="button" onclick="checkCode()">Submit</button>
+      <div id="debugDiv">
+        hier komt debug info
+      </div>
+      <button type="button" onclick="showDebug()">show debug info</button>
     </div>
-    <input id="codeInput">
-    <button type="button" onclick="checkCode()">Submit</button>
     <script src="js/codeties.js"></script>
   </body>
 </html>
