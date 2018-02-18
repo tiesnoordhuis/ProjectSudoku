@@ -3,3 +3,27 @@
   padding: 0px 0px 0px 0px;
   border: 0px 0px 0px 0px;
 }
+
+.background {
+  background-image: url("../images/boordcomputer1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.codeInput {
+  margin-top: 270px;
+  margin-left: 600px;
+  width: 400px;
+  height: 40px;
+  background-color: #014f01;
+  color: black;
+  font-size: 20px;
+  border-width: 0px;
+}
+
+.codeInputButton {
+  margin-top: 50px;
+  margin-left: 750px;
+  width: 100px;
+  height: 40px;
+}
