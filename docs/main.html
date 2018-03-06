@@ -6,14 +6,23 @@
   </head>
   <body id="body" class="mainTop background">
     <div class="mainTop">
-      <div id="titleDiv">
+      <div id="titleDiv" style="display:none">
         Hello world!
       </div>
       <input id="codeInput" class="codeInput">
         </br>
         <button id="codeInputButton" class="codeInputButton" type="button" onclick="checkCode()">Submit</button>
       </input>
-      <div id="debugDiv">
+    </div>
+    <div class="mainTop" id="planetPicker">
+      <p>planet picker</p>
+      <img src="images/planetMap.jpg" width="1000" height="700" usemap="#planetMap">
+      <map name="planetMap">
+        <area shape="circle" coords="200, 200, 100" onclick="circle1()" alt="planeet 1">
+      </map>
+    </div>
+    <div class="mainTop" id="debug">
+      <div id="debugDiv"  class="debugInfo">
         hier komt debug info
       </div>
       <button type="button" onclick="showDebug()">show debug info</button>

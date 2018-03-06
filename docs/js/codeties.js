@@ -11,7 +11,7 @@ function checkCode() {
     document.getElementById("titleDiv").innerHTML = "succes!";
     hide(1);
     document.getElementById("body").style.backgroundImage = "url('images/boordcomputer2.jpg')";
-    setTimeout(newScreen, 30000);
+    setTimeout(newScreen, 1000);
   } else {
     document.getElementById("titleDiv").innerHTML = "FOUT!";
     document.getElementById("codeInput").value = "";
@@ -20,7 +20,8 @@ function checkCode() {
 }
 
 function newScreen() {
-  document.getElementById("body").style.backgroundImage = "";
+  document.getElementById("planetPicker").style.display = "block";
+  document.getElementById("body").style.backgroundImage = "url('images/placeholderPlanetPicker.jpg')";
 }
 
 function hide(n) {
@@ -30,14 +31,19 @@ function hide(n) {
   }
 }
 
+function circle1() {
+  document.getElementById("debugDiv").innerHTML = "circle 1 is selected";
+}
+
 window.onload = frameIni();
 
 function frameIni() {
+  document.getElementById("planetPicker").style.display = "none";
   var width = screen.width;
   var height = screen.height;
 }
 
 function showDebug() {
-  document.getElementById("debugDiv").innerHTML = "De width is " + screen.width;
+  document.getElementById("debugDiv").innerHTML = "De width is " + screen.width + "</br>";
   document.getElementById("debugDiv").innerHTML += "De height is " + screen.height;
 }
