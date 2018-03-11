@@ -27,3 +27,55 @@
   width: 100px;
   height: 40px;
 }
+
+<<<<<<< HEAD
+.introBodyClass {
+  width: 1920px;
+  height: 1080px;
+  background-color: green;
+}
+
+.noExtra {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  border: 0px 0px 0px 0px;
+}
+
+.welcomeDivMainClass {
+  padding: 500px 0px 0px 740px;
+}
+
+.step2DivMainClass {
+  padding: 470px 0px 0px 720px;
+}
+
+.insideButtonClass {
+  font-size: 40px;
+  color: white;
+}
+
+.buttonClass {
+  background-color: black;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 15px 32px;
+}
+
+.borderStep2 {
+  padding: 10px 0px 10px 0px;
+}
+
+.inputeStep2Class {
+  padding: 15px 15px 15px 15px;
+  background-color: black;
+  color: white;
+  width: 415px;
+  font-size: 40px;
+  text-align: center;
+=======
+.debugInfo {
+  color: white;
+>>>>>>> 866448e9259a9555031ee13e796221ded39b0bdd
+}

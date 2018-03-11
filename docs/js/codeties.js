@@ -11,7 +11,7 @@ function checkCode() {
     document.getElementById("titleDiv").innerHTML = "succes!";
     hide(1);
     document.getElementById("body").style.backgroundImage = "url('images/boordcomputer2.jpg')";
-    setTimeout(newScreen, 30000);
+    setTimeout(newScreen, 1000);
   } else {
     document.getElementById("titleDiv").innerHTML = "FOUT!";
     document.getElementById("codeInput").value = "";
@@ -20,7 +20,8 @@ function checkCode() {
 }
 
 function newScreen() {
-  document.getElementById("body").style.backgroundImage = "";
+  document.getElementById("planetPicker").style.display = "block";
+  document.getElementById("body").style.backgroundImage = "url('images/placeholderPlanetPicker.jpg')";
 }
 
 function hide(n) {
@@ -30,14 +31,76 @@ function hide(n) {
   }
 }
 
+function circle1() {
+  document.getElementById("debugDiv").innerHTML = "circle 1 is selected";
+}
+
 window.onload = frameIni();
 
 function frameIni() {
+  document.getElementById("planetPicker").style.display = "none";
   var width = screen.width;
   var height = screen.height;
 }
 
 function showDebug() {
-  document.getElementById("debugDiv").innerHTML = "De width is " + screen.width;
+  document.getElementById("debugDiv").innerHTML = "De width is " + screen.width + "</br>";
   document.getElementById("debugDiv").innerHTML += "De height is " + screen.height;
+}
+
+function intro() {
+  document.getElementById("welcomeDivMain").style.display = "none";
+  setTimeout(loadStep2, 1000);
+}
+
+function loadStep2() {
+  document.getElementById("step2DivMain").style.display = "block";
+}
+
+function input(x) {
+  console.log(document.getElementById("inputeStep2").innerHTML.length);
+  if (document.getElementById("inputeStep2").innerHTML == "hier komt de code" || document.getElementById("inputeStep2").innerHTML == "fout, probeer opnieuw") {
+    document.getElementById("inputeStep2").innerHTML = ""
+  }
+  var xInput = x.toString();
+  document.getElementById("inputeStep2").innerHTML += xInput;
+  if (document.getElementById("inputeStep2").innerHTML.length > 6) {
+    if (document.getElementById("inputeStep2").innerHTML == "1234567") {
+      noInputStep2(0);
+      document.getElementById("inputeStep2").style.backgroundColor = "green";
+      setTimeout(step2CorrectCode, 200);
+    } else {
+      noInputStep2(0);
+      document.getElementById("inputeStep2").style.backgroundColor = "red";
+      setTimeout(step2FoutCode, 1000);
+    }
+  }
+}
+
+function step2FoutCode() {
+  document.getElementById("inputeStep2").style.backgroundColor = "black";
+  document.getElementById("inputeStep2").innerHTML = "fout, probeer opnieuw";
+  noInputStep2(1);
+}
+
+function step2CorrectCode() {
+  document.getElementById("inputeStep2").style.backgroundColor = "black";
+  document.getElementById("inputeStep2").innerHTML = "succes";
+  noInputStep2(1);
+}
+
+function noInputStep2(x) {
+  var step2DivMain = document.getElementById("step2DivMain");
+  var step2Buttons = step2DivMain.getElementsByClassName("buttonClass");
+  if (x == 0) {
+    for (var i = 0; i < step2Buttons.length; i++) {
+      step2Buttons[i].onclick = "";
+      console.log("set buttons uit");
+    }
+  } else if (x == 1) {
+    for (var i = 0; i < step2Buttons.length; i++) {
+      step2Buttons[i].onclick = function() {input(i)}
+      console.log("set buttons aan");
+    }
+  }
 }
