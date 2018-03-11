@@ -21,6 +21,10 @@
   border-width: 0px;
 }
 
+.noWrap {
+  float: left;
+}
+
 .codeInputButton {
   margin-top: 50px;
   margin-left: 750px;
@@ -28,8 +32,6 @@
   height: 40px;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 .introBodyClass {
   width: 1920px;
   height: 1080px;
@@ -75,12 +77,4 @@
   width: 415px;
   font-size: 40px;
   text-align: center;
-=======
-.debugInfo {
-  color: white;
->>>>>>> 866448e9259a9555031ee13e796221ded39b0bdd
-=======
-.debugInfo {
-  color: white;
->>>>>>> 866448e9259a9555031ee13e796221ded39b0bdd
 }

@@ -59,20 +59,24 @@ function loadStep2() {
 
 function input(x) {
   console.log(document.getElementById("inputeStep2").innerHTML.length);
-  if (document.getElementById("inputeStep2").innerHTML == "hier komt de code" || document.getElementById("inputeStep2").innerHTML == "fout, probeer opnieuw") {
-    document.getElementById("inputeStep2").innerHTML = ""
-  }
-  var xInput = x.toString();
-  document.getElementById("inputeStep2").innerHTML += xInput;
-  if (document.getElementById("inputeStep2").innerHTML.length > 6) {
-    if (document.getElementById("inputeStep2").innerHTML == "1234567") {
-      noInputStep2(0);
-      document.getElementById("inputeStep2").style.backgroundColor = "green";
-      setTimeout(step2CorrectCode, 200);
-    } else {
-      noInputStep2(0);
-      document.getElementById("inputeStep2").style.backgroundColor = "red";
-      setTimeout(step2FoutCode, 1000);
+  if (document.getElementById("step2DivMain").className == "step2DivMainClass inputCheck") {
+    console.log("code input not allowed");
+  } else {
+    if (document.getElementById("inputeStep2").innerHTML == "hier komt de code" || document.getElementById("inputeStep2").innerHTML == "fout, probeer opnieuw") {
+      document.getElementById("inputeStep2").innerHTML = ""
+    }
+    var xInput = x.toString();
+    document.getElementById("inputeStep2").innerHTML += xInput;
+    if (document.getElementById("inputeStep2").innerHTML.length > 6) {
+      if (document.getElementById("inputeStep2").innerHTML == "1234567") {
+        noInputStep2(0);
+        document.getElementById("inputeStep2").style.backgroundColor = "green";
+        setTimeout(step2CorrectCode, 200);
+      } else {
+        noInputStep2(0);
+        document.getElementById("inputeStep2").style.backgroundColor = "red";
+        setTimeout(step2FoutCode, 1000);
+      }
     }
   }
 }
@@ -90,17 +94,15 @@ function step2CorrectCode() {
 }
 
 function noInputStep2(x) {
-  var step2DivMain = document.getElementById("step2DivMain");
-  var step2Buttons = step2DivMain.getElementsByClassName("buttonClass");
   if (x == 0) {
-    for (var i = 0; i < step2Buttons.length; i++) {
-      step2Buttons[i].onclick = "";
-      console.log("set buttons uit");
-    }
+    document.getElementById("step2DivMain").className = "step2DivMainClass inputCheck";
   } else if (x == 1) {
-    for (var i = 0; i < step2Buttons.length; i++) {
-      step2Buttons[i].onclick = function() {input(i)}
-      console.log("set buttons aan");
-    }
+    document.getElementById("step2DivMain").className = "step2DivMainClass";
   }
+}
+
+function step2Backspace() {
+  var x = document.getElementById("inputeStep2").innerHTML.slice(0, -1);
+  document.getElementById("inputeStep2").innerHTML = x;
+  console.log(x);
 }
