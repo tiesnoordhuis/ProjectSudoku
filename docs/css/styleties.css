@@ -22,7 +22,7 @@
 }
 
 .noWrap {
-  float: left;
+  display: inline-block;
 }
 
 .codeInputButton {
