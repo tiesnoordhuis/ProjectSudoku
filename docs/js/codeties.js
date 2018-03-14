@@ -91,6 +91,7 @@ function step2CorrectCode() {
   document.getElementById("inputeStep2").style.backgroundColor = "black";
   document.getElementById("inputeStep2").innerHTML = "succes";
   noInputStep2(1);
+  setTimeout(step3, 1000);
 }
 
 function noInputStep2(x) {
@@ -103,6 +104,19 @@ function noInputStep2(x) {
 
 function step2Backspace() {
   var x = document.getElementById("inputeStep2").innerHTML.slice(0, -1);
-  document.getElementById("inputeStep2").innerHTML = x;
-  console.log(x);
+  if (document.getElementById("step2DivMain").className == "step2DivMainClass inputCheck") {
+
+  } else if (document.getElementById("inputeStep2").innerHTML == "hier komt de code" || document.getElementById("inputeStep2").innerHTML == "fout, probeer opnieuw") {
+
+  } else if (document.getElementById("inputeStep2").innerHTML.length < 1) {
+
+  } else {
+    document.getElementById("inputeStep2").innerHTML = x;
+    console.log(x);
+    }
+}
+
+function step3() {
+  document.getElementById("step2DivMain").style.display = "none";
+  document.getElementById("step3DivMain").style.display = "block";
 }

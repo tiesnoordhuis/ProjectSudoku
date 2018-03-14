@@ -23,6 +23,7 @@
 
 .noWrap {
   display: inline-block;
+  margin: 0px 0px 0px 0px;
 }
 
 .codeInputButton {
@@ -49,7 +50,7 @@
 }
 
 .step2DivMainClass {
-  padding: 470px 0px 0px 720px;
+  padding: 410px 0px 0px 720px;
 }
 
 .insideButtonClass {
@@ -77,4 +78,9 @@
   width: 415px;
   font-size: 40px;
   text-align: center;
+  height: 47px;
+}
+
+.backspaceButton {
+  padding: 15px 0px 15px 0px;
 }
