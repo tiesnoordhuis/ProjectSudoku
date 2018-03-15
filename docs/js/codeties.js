@@ -120,3 +120,7 @@ function step3() {
   document.getElementById("step2DivMain").style.display = "none";
   document.getElementById("step3DivMain").style.display = "block";
 }
+
+function clickPlanet() {
+  console.log("click");
+}

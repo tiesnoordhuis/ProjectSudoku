@@ -70,8 +70,15 @@
         </div>
       </button>
     </div>
-    <div id="step3DivMain" class="step3DivMainClass" style="display: none">
-      testtest
+    <div id="step3DivMain" class="step3DivMainClass noExtra" style="display: none">
+      <img src="images/step3Background2.jpg" usemap="#planetMap" class="step3ImgClass noExtra">
+        <svg xmlns="http://www.w3.org/2000/svg" class="testCircleClass">
+          <circle cx="50" cy="50" r="50" fill="red" />
+        </svg>
+      </img>
+      <map name="planetMap">
+        <area shape="circle" coords="400,400,300" onclick="clickPlanet()" alt="Sun">
+      </map>
     </div>
     <script src="js/codeties.js"></script>
   </body>
