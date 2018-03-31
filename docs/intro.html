@@ -3,6 +3,10 @@
   <head>
     <title> boordcomputer </title>
     <link href="css/styleties.css" rel="stylesheet">
+    <script language="javascript" type="text/javascript" src="arduino/p5.js"></script>
+    <script language="javascript" type="text/javascript" src="arduino/p5.dom.js"></script>
+    <script language="javascript" type="text/javascript" src="arduino/p5.serialport.js"></script>
+    <script language="javascript" type="text/javascript" src="arduino/boordcomputerP5Read.js"></script>
   </head>
   <body id="introBody" class="introBodyClass noExtra">
     <div id="welcomeDivMain" class="welcomeDivMainClass">
@@ -71,11 +75,32 @@
       </button>
     </div>
     <div id="step3DivMain" class="step3DivMainClass noExtra" style="display: none">
-      <img src="images/step3Background2.jpg" usemap="#planetMap" class="step3ImgClass noExtra">
-      </img>
-      <map name="planetMap">
-        <area shape="circle" coords="320,290,200" onclick="clickPlanet()" alt="Sun">
-      </map>
+      <input id="inputDom" type="text">
+      </input>
+      <button onclick="mouseReleased()">
+        enter info to port
+      </button>
+      <div>
+        <div>current value</div>
+        <p id="display1">
+          initial value
+        </p>
+        <div>max value (100)</div>
+        <p id="display2">
+          initial value
+        </p>
+        <div>average value</div>
+        <p id="display3">
+          initial value
+        </p>
+        <div>average Max value</div>
+        <p id="display4">
+          initial value
+        </p>
+      </div>
+    </div>
+    <div id="step4DivMain" class="step3DivMainClass noExtra" style="display: none">
+      success
     </div>
     <script src="js/codeties.js"></script>
   </body>
