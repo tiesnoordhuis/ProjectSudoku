@@ -89,4 +89,44 @@
   position: relative;
 }
 
-.te
+.step3DivTextClass {
+  padding: 340px 0px 0px 490px;
+}
+
+.step3TextClass {
+  padding-top: 20px;
+  background-color: black;
+  color: white;
+  width: 910px;
+  font-size: 40px;
+  text-align: center;
+  height: 260px;
+}
+
+.step3Values {
+  padding-top: 20px;
+  background-color: grey;
+  color: white;
+  width: 260px;
+  font-size: 30px;
+  text-align: center;
+  height: 120px;
+  margin-left: 800px;
+}
+
+.step3ValuesP {
+  margin-top: 5px;
+}
+
+.step4DivMainClass {
+  padding: 450px 0px 0px 800px;
+}
+
+.step4textClass {
+  background-color: black;
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  width: 200px;
+  padding: 20px 20px 20px 20px;
+}

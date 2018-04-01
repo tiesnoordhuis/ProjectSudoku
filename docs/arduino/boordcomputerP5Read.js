@@ -58,7 +58,7 @@ function gotList(thelist) {
 // Called when there is data available from the serial port
 function gotData() {
   var currentString = serial.read();
-  document.getElementById("display1").innerHTML = currentString;
+  //document.getElementById("display1").innerHTML = currentString;
   updateMax(currentString);
   updateAverage(currentString);
 }
@@ -68,11 +68,11 @@ function updateMax(currentValue) {
   if (maxValueReset > 100) {
     maxValueReset = 0;
     maxValue = 0;
-    document.getElementById("display2").innerHTML = maxValue;
+    //document.getElementById("display2").innerHTML = maxValue;
   } else {
     if (currentValue > maxValue) {
       maxValue = currentValue
-      document.getElementById("display2").innerHTML = maxValue;
+      //document.getElementById("display2").innerHTML = maxValue;
       maxValueReset = 0;
     }
   }
@@ -100,14 +100,14 @@ function updateAvgMax(averageValue) {
   if (maxAvgReset > 100) {
     maxAvgReset = 0;
     maxAvg = 0;
-    document.getElementById("display4").innerHTML = maxAvg;
+    //document.getElementById("display4").innerHTML = maxAvg;
   } else {
     if (averageValue > maxAvg) {
       maxAvg = averageValue
-      document.getElementById("display4").innerHTML = maxAvg;
+      //document.getElementById("display4").innerHTML = maxAvg;
       if (maxAvg > 150 && atArduinoStep == true) {
         console.log("connected");
-        document.getElementById("inputDom").value = "succes";
+        //document.getElementById("inputDom").value = "succes";
         arduinoConnectSucces();
       }
       maxAvgReset = 0;
@@ -122,6 +122,7 @@ function arduinoConnectSucces() {
 
 // When you click on the screen, the server sends H or L out the serial port
 function mouseReleased() {
+  return
   outMessage = document.getElementById("inputDom").value;
   serial.write(outMessage);
 }

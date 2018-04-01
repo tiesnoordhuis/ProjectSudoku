@@ -5252,7 +5252,7 @@ exports.sizeOf = sizeOf;
 
     function timedOut() {
       self._timedOut = true
-      self.request.abort()      
+      self.request.abort()
     }
 
     function error(resp, msg, t) {
@@ -9087,13 +9087,14 @@ var p5 = function(sketch, node, sync) {
     // Always create a default canvas.
     // Later on if the user calls createCanvas, this default one
     // will be replaced
+    /*
     this.createCanvas(
       this._defaultCanvasSize.width,
       this._defaultCanvasSize.height,
       'p2d',
       true
     );
-
+    */
     // return preload functions to their normal vals if switched by preload
     var context = this._isGlobal ? window : this;
     if (typeof context.preload === 'function') {

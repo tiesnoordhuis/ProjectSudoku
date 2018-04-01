@@ -124,3 +124,13 @@ function step3() {
 function clickPlanet() {
   console.log("click");
 }
+
+function skipTo3() {
+  document.getElementById("step3DivMain").style.display = "block";
+  document.getElementById("welcomeDivMain").style.display = "none";
+}
+
+function skipTo4() {
+  document.getElementById("step4DivMain").style.display = "block";
+  document.getElementById("welcomeDivMain").style.display = "none";
+}
