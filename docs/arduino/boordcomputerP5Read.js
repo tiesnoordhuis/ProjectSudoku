@@ -58,6 +58,7 @@ function gotList(thelist) {
 // Called when there is data available from the serial port
 function gotData() {
   var currentString = serial.read();
+  console.log(currentString);
   //document.getElementById("display1").innerHTML = currentString;
   updateMax(currentString);
   updateAverage(currentString);
@@ -125,4 +126,11 @@ function mouseReleased() {
   return
   outMessage = document.getElementById("inputDom").value;
   serial.write(outMessage);
+}
+
+function sendToArduino() {
+  var sentValue = document.getElementById("inputArduino").value;
+  sentValue = Number(sentValue);
+  console.log(sentValue);
+  serial.write(sentValue);
 }
