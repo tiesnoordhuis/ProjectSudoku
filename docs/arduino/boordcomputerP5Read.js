@@ -119,8 +119,13 @@ function updateAvgMax(averageValue) {
 function arduinoConnectSucces() {
   document.getElementById("step3DivMain").style.display = "none";
   document.getElementById("step4DivMain").style.display = "block";
+}
+
+function locationEnteredSucces() {
+  document.getElementById("step4DivMain").style.display = "none";
+  document.getElementById("step5DivMain").style.display = "block";
   arduinoRotateSet();
-  setTimeout(arduinoServoOff, 1500);
+  setTimeout(arduinoServoOff, 3000);
 }
 
 // When you click on the screen, the server sends H or L out the serial port
@@ -144,4 +149,24 @@ function arduinoRotateSet() {
 
 function arduinoServoOff() {
   serial.write(98);
+}
+
+function resetToBegin() {
+  serial.write(97);
+  serial.write(101);
+  document.getElementById("welcomeDivMain").style.display = "block";
+  document.getElementById("step2DivMain").style.display = "none";
+  document.getElementById("step3DivMain").style.display = "none";
+  document.getElementById("step4DivMain").style.display = "none";
+  document.getElementById("step5DivMain").style.display = "none";
+  document.getElementById("1inputeStep2").innerHTML = "hier komt de code";
+  maxValueReset = 0;
+  maxValue = 0;
+  maxAvgReset = 0;
+  maxAvg = 0;
+  averageString = [0,0,0,0,0];
+  averageN = averageString.length;
+  averageValue = 0;
+  atArduinoStep = false;
+  setTimeout(arduinoServoOff,3000);
 }

@@ -131,6 +131,6 @@ function skipTo3() {
 }
 
 function skipTo4() {
-  document.getElementById("step4DivMain").style.display = "block";
+  document.getElementById("step5DivMain").style.display = "block";
   document.getElementById("welcomeDivMain").style.display = "none";
 }
