@@ -81,6 +81,65 @@ function input(x) {
   }
 }
 
+function input2(x) {
+  console.log(document.getElementById("inputeStep4").innerHTML.length);
+  if (document.getElementById("step4DivMain").className == "step2DivMainClass inputCheck") {
+    console.log("code input not allowed");
+  } else {
+    if (document.getElementById("inputeStep4").innerHTML == "Coördinaten" || document.getElementById("inputeStep4").innerHTML == "fout, probeer opnieuw") {
+      document.getElementById("inputeStep4").innerHTML = ""
+    }
+    var xInput = x.toString();
+    document.getElementById("inputeStep4").innerHTML += xInput;
+    if (document.getElementById("inputeStep4").innerHTML.length > 6) {
+      if (document.getElementById("inputeStep4").innerHTML == "1234567") {
+        noInputStep4(0);
+        document.getElementById("inputeStep4").style.backgroundColor = "green";
+        setTimeout(step4CorrectCode, 200);
+      } else {
+        noInputStep4(0);
+        document.getElementById("inputeStep4").style.backgroundColor = "red";
+        setTimeout(step4FoutCode, 1000);
+      }
+    }
+  }
+}
+
+function step4FoutCode() {
+  document.getElementById("inputeStep4").style.backgroundColor = "black";
+  document.getElementById("inputeStep4").innerHTML = "fout, probeer opnieuw";
+  noInputStep4(1);
+}
+
+function step4CorrectCode() {
+  document.getElementById("inputeStep4").style.backgroundColor = "black";
+  document.getElementById("inputeStep4").innerHTML = "succes";
+  noInputStep4(1);
+  setTimeout(step5, 1000);
+}
+
+function noInputStep4(x) {
+  if (x == 0) {
+    document.getElementById("step4DivMain").className = "step2DivMainClass inputCheck";
+  } else if (x == 1) {
+    document.getElementById("step4DivMain").className = "step2DivMainClass";
+  }
+}
+
+function step4Backspace() {
+  var x = document.getElementById("inputeStep4").innerHTML.slice(0, -1);
+  if (document.getElementById("step4DivMain").className == "step2DivMainClass inputCheck") {
+
+  } else if (document.getElementById("inputeStep4").innerHTML == "Coördinaten" || document.getElementById("inputeStep4").innerHTML == "fout, probeer opnieuw") {
+
+  } else if (document.getElementById("inputeStep4").innerHTML.length < 1) {
+
+  } else {
+    document.getElementById("inputeStep4").innerHTML = x;
+    console.log(x);
+    }
+}
+
 function step2FoutCode() {
   document.getElementById("inputeStep2").style.backgroundColor = "black";
   document.getElementById("inputeStep2").innerHTML = "fout, probeer opnieuw";
@@ -119,6 +178,11 @@ function step2Backspace() {
 function step3() {
   document.getElementById("step2DivMain").style.display = "none";
   document.getElementById("step3DivMain").style.display = "block";
+}
+
+function step5() {
+  document.getElementById("step4DivMain").style.display = "none";
+  document.getElementById("step5DivMain").style.display = "block";
 }
 
 function clickPlanet() {
