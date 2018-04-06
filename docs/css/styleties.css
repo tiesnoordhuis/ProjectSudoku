@@ -81,6 +81,15 @@
   height: 47px;
 }
 
+.preInputClass {
+  background-color: black;
+  color: white;
+  width: 30px;
+  font-size: 40px;
+  text-align: center;
+  height: 47px;
+}
+
 .backspaceButton {
   padding: 15px 0px 15px 0px;
 }
@@ -132,5 +141,5 @@
 }
 
 .step4DivMainClass {
-  
+
 }
