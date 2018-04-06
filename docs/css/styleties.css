@@ -36,7 +36,7 @@
 .introBodyClass {
   width: 1920px;
   height: 1080px;
-  background-color: #014f01;
+  background-color: green;
 }
 
 .noExtra {
@@ -80,17 +80,6 @@
   text-align: center;
   height: 47px;
 }
-
-.inputeStep4Class {
-  padding: 15px 15px 15px 15px;
-  background-color: black;
-  color: white;
-  width: 349px;
-  font-size: 40px;
-  text-align: center;
-  height: 47px;
-}
-
 
 .backspaceButton {
   padding: 15px 0px 15px 0px;
@@ -143,16 +132,5 @@
 }
 
 .step4DivMainClass {
-
-}
-
-.allignInsideButton {
-  display: inline-block;
-}
-
-.preCoordsText {
-  margin-left: 20px;
-  color: white;
-  font-size: 40px;
-  text-align: center;
+  
 }
