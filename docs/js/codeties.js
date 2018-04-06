@@ -38,9 +38,10 @@ function circle1() {
 window.onload = frameIni();
 
 function frameIni() {
-  document.getElementById("planetPicker").style.display = "none";
+  //document.getElementById("planetPicker").style.display = "none";
   var width = screen.width;
   var height = screen.height;
+  console.log(width + " " + height);
 }
 
 function showDebug() {
@@ -130,7 +131,17 @@ function skipTo3() {
   document.getElementById("welcomeDivMain").style.display = "none";
 }
 
-function skipTo4() {
+function skipTo5() {
   document.getElementById("step5DivMain").style.display = "block";
   document.getElementById("welcomeDivMain").style.display = "none";
+}
+
+function skipTo4() {
+  document.getElementById("step4DivMain").style.display = "block";
+  document.getElementById("welcomeDivMain").style.display = "none";
+}
+
+const changeStep = (stepNr) => {
+  document.querySelectorAll('body > div').forEach((el) => el.classList.add('hidden'));
+  document.getElementById(`step${stepNr}DivMain`).classList.remove('hidden');
 }
