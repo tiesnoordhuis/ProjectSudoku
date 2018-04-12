@@ -11,7 +11,7 @@ function checkCode() {
     document.getElementById("titleDiv").innerHTML = "succes!";
     hide(1);
     document.getElementById("body").style.backgroundImage = "url('images/boordcomputer2.jpg')";
-    setTimeout(newScreen, 1000);
+    setTimeout(newScreen, 500);
   } else {
     document.getElementById("titleDiv").innerHTML = "FOUT!";
     document.getElementById("codeInput").value = "";
@@ -67,8 +67,8 @@ function input(x) {
     }
     var xInput = x.toString();
     document.getElementById("inputeStep2").innerHTML += xInput;
-    if (document.getElementById("inputeStep2").innerHTML.length > 6) {
-      if (document.getElementById("inputeStep2").innerHTML == "1234567") {
+    if (document.getElementById("inputeStep2").innerHTML.length > 3) {
+      if (document.getElementById("inputeStep2").innerHTML == "4823") {
         noInputStep2(0);
         document.getElementById("inputeStep2").style.backgroundColor = "green";
         setTimeout(step2CorrectCode, 200);
@@ -91,8 +91,8 @@ function input2(x) {
     }
     var xInput = x.toString();
     document.getElementById("inputeStep4").innerHTML += xInput;
-    if (document.getElementById("inputeStep4").innerHTML.length > 6) {
-      if (document.getElementById("inputeStep4").innerHTML == "1234567") {
+    if (document.getElementById("inputeStep4").innerHTML.length > 3) {
+      if (document.getElementById("inputeStep4").innerHTML == "2108") {
         noInputStep4(0);
         document.getElementById("inputeStep4").style.backgroundColor = "green";
         setTimeout(step4CorrectCode, 200);
@@ -196,5 +196,10 @@ function skipTo3() {
 
 function skipTo4() {
   document.getElementById("step4DivMain").style.display = "block";
+  document.getElementById("welcomeDivMain").style.display = "none";
+}
+
+function skipTo6() {
+  document.getElementById("step6DivMain").style.display = "block";
   document.getElementById("welcomeDivMain").style.display = "none";
 }
