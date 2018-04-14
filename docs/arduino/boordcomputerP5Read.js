@@ -122,8 +122,6 @@ function arduinoConnectSucces() {
 }
 
 function locationEnteredSucces() {
-  document.getElementById("step4DivMain").style.display = "none";
-  document.getElementById("step5DivMain").style.display = "block";
   arduinoRotateSet();
   setTimeout(arduinoServoOff, 3000);
 }

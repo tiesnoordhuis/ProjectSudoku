@@ -183,6 +183,8 @@ function step3() {
 function step5() {
   document.getElementById("step4DivMain").style.display = "none";
   document.getElementById("step5DivMain").style.display = "block";
+  locationEnteredSucces();
+  setTimeout(displayGif, 3000);
 }
 
 function clickPlanet() {
@@ -202,4 +204,11 @@ function skipTo4() {
 function skipTo6() {
   document.getElementById("step6DivMain").style.display = "block";
   document.getElementById("welcomeDivMain").style.display = "none";
+}
+
+function displayGif() {
+  document.getElementById("step5DivMain").classList.add("hidden");
+    document.getElementById("step5DivMain").style.display = "none";
+  document.getElementById("step6DivMain").classList.remove("hidden");
+  document.getElementById("step6DivMain").classList.add("spaceTravel");
 }

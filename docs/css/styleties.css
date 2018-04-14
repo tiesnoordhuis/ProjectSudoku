@@ -152,6 +152,12 @@
   padding: 450px 0px 0px 800px;
 }
 
+.step6DivMainClass {
+  padding: 0px 0px 0px 0px;
+  width: 1920px;
+  height: 1080px;
+}
+
 .step5textClass {
   background-color: black;
   color: white;
@@ -163,4 +169,17 @@
 
 .step4DivMainClass {
 
+}
+
+.hidden {
+  display: none;
+}
+
+.toTheBack {
+  z-index: -1;
+}
+
+.spaceTravel {
+  background-image: url('../images/gif/spaceTravel.gif');
+  background-size: 1920px 1080px;
 }
