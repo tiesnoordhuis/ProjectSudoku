@@ -201,6 +201,11 @@ function skipTo4() {
   document.getElementById("welcomeDivMain").style.display = "none";
 }
 
+function skipTo5() {
+  document.getElementById("step5DivMain").style.display = "block";
+  document.getElementById("welcomeDivMain").style.display = "none";
+}
+
 function skipTo6() {
   document.getElementById("step6DivMain").style.display = "block";
   document.getElementById("welcomeDivMain").style.display = "none";
@@ -208,7 +213,13 @@ function skipTo6() {
 
 function displayGif() {
   document.getElementById("step5DivMain").classList.add("hidden");
-    document.getElementById("step5DivMain").style.display = "none";
+  document.getElementById("step5DivMain").style.display = "none";
   document.getElementById("step6DivMain").classList.remove("hidden");
   document.getElementById("step6DivMain").classList.add("spaceTravel");
+  setTimeout(step7, 7000);
+}
+
+function step7() {
+  document.getElementById("step6DivMain").classList.add("hidden");
+  document.getElementById("step7DivMain").classList.remove("hidden");
 }
