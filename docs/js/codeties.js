@@ -62,7 +62,7 @@ function input(x) {
   if (document.getElementById("step2DivMain").className == "step2DivMainClass inputCheck") {
     console.log("code input not allowed");
   } else {
-    if (document.getElementById("inputeStep2").innerHTML == "hier komt de code" || document.getElementById("inputeStep2").innerHTML == "fout, probeer opnieuw") {
+    if (document.getElementById("inputeStep2").innerHTML == "Code hier invullen" || document.getElementById("inputeStep2").innerHTML == "fout, probeer opnieuw") {
       document.getElementById("inputeStep2").innerHTML = ""
     }
     var xInput = x.toString();
@@ -165,7 +165,7 @@ function step2Backspace() {
   var x = document.getElementById("inputeStep2").innerHTML.slice(0, -1);
   if (document.getElementById("step2DivMain").className == "step2DivMainClass inputCheck") {
 
-  } else if (document.getElementById("inputeStep2").innerHTML == "hier komt de code" || document.getElementById("inputeStep2").innerHTML == "fout, probeer opnieuw") {
+  } else if (document.getElementById("inputeStep2").innerHTML == "Code hier invullen" || document.getElementById("inputeStep2").innerHTML == "fout, probeer opnieuw") {
 
   } else if (document.getElementById("inputeStep2").innerHTML.length < 1) {
 
