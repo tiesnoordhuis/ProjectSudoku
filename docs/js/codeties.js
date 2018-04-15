@@ -184,7 +184,6 @@ function step5() {
   document.getElementById("step4DivMain").style.display = "none";
   document.getElementById("step5DivMain").style.display = "block";
   locationEnteredSucces();
-  setTimeout(displayGif, 3000);
 }
 
 function clickPlanet() {

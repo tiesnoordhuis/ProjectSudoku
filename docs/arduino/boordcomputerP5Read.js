@@ -25,6 +25,7 @@ var averageString = [0,0,0,0,0];
 var averageN = averageString.length;
 var averageValue = 0;
 var atArduinoStep = false;
+var step4Var = 0;
 
 function setup() {
   // make an instance of the SerialPort object
@@ -118,12 +119,16 @@ function updateAvgMax(averageValue) {
 
 function arduinoConnectSucces() {
   document.getElementById("step3DivMain").style.display = "none";
-  document.getElementById("step4DivMain").style.display = "block";
+  if (step4Var == 0) {
+    document.getElementById("step4DivMain").style.display = "block";
+    step4Var = 1;
+  }
 }
 
 function locationEnteredSucces() {
   arduinoRotateSet();
-  setTimeout(arduinoServoOff, 3000);
+  setTimeout(displayGif, 3000);
+  setTimeout(arduinoServoOff, 12000);
 }
 
 // When you click on the screen, the server sends H or L out the serial port
