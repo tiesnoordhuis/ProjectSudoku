@@ -2,6 +2,12 @@
   font-family: 'Roboto_Mone';
   font-size: .75em;
 }
+
+.bodyBackground1{
+  background-image: url("../images/spacehuds/spacehuds/spacehud-02.jpg");
+  background-repeat: no-repeat;
+}
+
 .mainTop {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
