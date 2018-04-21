@@ -1,3 +1,10 @@
+body:after{
+    position:absolute; z-index:-10;
+    visibility: hidden;
+    display: none;
+    content: url(../images/spacehuds/spacehuds/spacehudBegin.jpg) url(../images/spacehuds/spacehuds/spacehud1.jpg) url(../images/spacehuds/spacehuds/spacehud2.jpg);
+}
+
 .bodyBackground1{
   background-image: url("../images/spacehuds/spacehuds/spacehudBegin.jpg");
   background-repeat: no-repeat;
