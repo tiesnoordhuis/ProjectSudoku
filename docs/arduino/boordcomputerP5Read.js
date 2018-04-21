@@ -96,7 +96,7 @@ function updateAverage(currentValue) {
 
 function updateAvgMax(averageValue) {
   maxAvgReset ++
-  if (document.getElementById("step3DivMain").style.display == "block") {
+  if (document.getElementById("step3DivMain").classList.contains("activeStep")) {
     atArduinoStep = true;
   }
   if (maxAvgReset > 100) {
@@ -111,17 +111,10 @@ function updateAvgMax(averageValue) {
         console.log("connected");
         //document.getElementById("inputDom").value = "succes";
         arduinoConnectSucces();
+        document.getElementById("step3DivMain").classList.remove("activeStep");
       }
       maxAvgReset = 0;
     }
-  }
-}
-
-function arduinoConnectSucces() {
-  document.getElementById("step3DivMain").style.display = "none";
-  if (step4Var == 0) {
-    document.getElementById("step4DivMain").style.display = "block";
-    step4Var = 1;
   }
 }
 

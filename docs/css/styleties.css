@@ -8,6 +8,42 @@
   background-repeat: no-repeat;
 }
 
+.bodyBackground3{
+  background-image: url("../images/spacehuds/spacehuds/spacehud2.jpg");
+  background-repeat: no-repeat;
+}
+
+.activeStep {
+}
+
+.timeDisplayClass {
+  padding: 100px 0px 0px 915px;
+}
+
+.visHidden {
+  visibility: hidden;
+}
+
+.timeText {
+  font-size: 23px;
+  color: white;
+  font-family: 'Roboto_Mone';
+}
+
+.timeText2 {
+  font-size: 23px;
+  color: white;
+  font-family: 'Roboto_Mone';
+  padding-left: 40px
+}
+
+.timeTime {
+  font-size: 65px;
+  color: white;
+  font-family: 'Roboto_Mone';
+  padding-left: 45px;
+}
+
 .codeInput {
   margin-top: 270px;
   margin-left: 600px;
@@ -17,11 +53,6 @@
   color: black;
   font-size: 20px;
   border-width: 0px;
-}
-
-.noWrap {
-  display: inline-block;
-  margin: 0px 0px 0px 0px;
 }
 
 .codeInputButton {
@@ -44,11 +75,18 @@
 }
 
 .step1DivMainClass {
-  padding: 471px 0px 0px 727px;
+  padding: 221px 0px 0px 727px;
 }
 
 .step2DivMainClass {
-  padding: 410px 0px 0px 720px;
+  padding: 130px 0px 0px 720px;
+}
+
+.step2Text{
+  padding-left: 20px;
+  font-size: 40px;
+  color: white;
+  font-family: 'Roboto_Mone';
 }
 
 .insideButtonClass {
@@ -65,6 +103,25 @@
   padding: 15px 32px;
 }
 
+.buttonClassInputMain {
+    width: 476px;
+    background-color: #333333;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px 32px;
+}
+
+.buttonClassInputMain2 {
+  width: 476px;
+  background-color: #333333;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 15px 32px;
+  height: 160px;
+}
+
 .welkomButton {
   border-width: 8px;
   border-style: solid;
@@ -74,14 +131,16 @@
 }
 
 .borderStep2 {
-  padding: 10px 0px 10px 0px;
+  padding: 0px 0px 5px 0px;
 }
 
 .inputeStep2Class {
-  padding: 15px 15px 15px 15px;
-  color: white;
-  width: 415px;
+  margin: 0px 15px 0px 15px;
+  padding: 15px 0px 15px 0px;
+  width: 442px;
   font-size: 40px;
+  color: white;
+  font-family: 'Roboto_Mone';
   text-align: center;
   height: 47px;
 }
@@ -89,29 +148,44 @@
 .inputeStep4Class {
   display: inline-block;
   padding: 15px 0px 15px 0px;
-  background-color: black;
-  color: white;
   width: 395px;
   font-size: 40px;
+  color: white;
+  font-family: 'Roboto_Mone';
+  text-align: center;
+  height: 47px;
+}
+
+.inputeStep4HeightFix {
+  display: inline-block;
+  width: 1px;
+  font-size: 40px;
+  color: white;
+  font-family: 'Roboto_Mone';
   text-align: center;
   height: 47px;
 }
 
 .step4PreInput {
+  left: 0px;
+  top: 0px;
   display: inline-block;
-  margin-left: 00px;
-  margin-right: 0px;
-  padding-left: 0px;
-  color: white;
   font-size: 40px;
-  text-align: center;
+  color: white;
+  font-family: 'Roboto_Mone';
+  position: absolute;
+}
+
+.displacedBackspace {
+  margin-left: 50px;
 }
 
 .preInputClass {
   background-color: black;
-  color: white;
   width: 30px;
   font-size: 40px;
+  color: white;
+  font-family: 'Roboto_Mone';
   text-align: center;
   height: 47px;
 }
@@ -124,26 +198,23 @@
   position: relative;
 }
 
-.step3DivTextClass {
-  padding: 340px 0px 0px 490px;
+.step3DivMainClass {
+  padding: 172px 0px 0px 730px;
 }
 
-.step3TextClass {
-  padding-top: 20px;
-  background-color: black;
-  color: white;
-  width: 910px;
+.step3DivTextClass {
   font-size: 40px;
-  text-align: center;
-  height: 260px;
+  color: white;
+  font-family: 'Roboto_Mone';
 }
 
 .step3Values {
   padding-top: 20px;
   background-color: grey;
-  color: white;
   width: 260px;
-  font-size: 30px;
+  font-size: 40px;
+  color: white;
+  font-family: 'Roboto_Mone';
   text-align: center;
   height: 120px;
   margin-left: 800px;
@@ -165,8 +236,9 @@
 
 .step5textClass {
   background-color: black;
-  color: white;
   font-size: 40px;
+  color: white;
+  font-family: 'Roboto_Mone';
   text-align: center;
   width: 200px;
   padding: 20px 20px 20px 20px;
@@ -174,8 +246,9 @@
 
 .step7textClass {
   background-color: black;
-  color: white;
   font-size: 40px;
+  color: white;
+  font-family: 'Roboto_Mone';
   text-align: center;
   width: 400px;
   padding: 20px 20px 20px 20px;

@@ -52,6 +52,7 @@ function loadStep2() {
   document.getElementById("step2DivMain").classList.remove("hidden");
   document.getElementById("mainBody").classList.remove("bodyBackground1");
   document.getElementById("mainBody").classList.add("bodyBackground2");
+  document.getElementById("timeDisplay").classList.remove("visHidden");
 }
 
 function input(x) {
@@ -103,13 +104,13 @@ function input2(x) {
 }
 
 function step4FoutCode() {
-  document.getElementById("inputeStep4").style.backgroundColor = "black";
+  document.getElementById("inputeStep4").style.backgroundColor = "transparent";
   document.getElementById("inputeStep4").innerHTML = "fout, probeer opnieuw";
   noInputStep4(1);
 }
 
 function step4CorrectCode() {
-  document.getElementById("inputeStep4").style.backgroundColor = "black";
+  document.getElementById("inputeStep4").style.backgroundColor = "transparent";
   document.getElementById("inputeStep4").innerHTML = "succes";
   noInputStep4(1);
   setTimeout(step5, 1000);
@@ -138,16 +139,16 @@ function step4Backspace() {
 }
 
 function step2FoutCode() {
-  document.getElementById("inputeStep2").style.backgroundColor = "black";
+  document.getElementById("inputeStep2").style.backgroundColor = "transparent";
   document.getElementById("inputeStep2").innerHTML = "fout, probeer opnieuw";
   noInputStep2(1);
 }
 
 function step2CorrectCode() {
-  document.getElementById("inputeStep2").style.backgroundColor = "black";
+  document.getElementById("inputeStep2").style.backgroundColor = "transparent";
   document.getElementById("inputeStep2").innerHTML = "succes";
   noInputStep2(1);
-  setTimeout(step3, 1000);
+  setTimeout(step3, 300);
 }
 
 function noInputStep2(x) {
@@ -173,8 +174,18 @@ function step2Backspace() {
 }
 
 function step3() {
-  document.getElementById("step2DivMain").style.display = "none";
-  document.getElementById("step3DivMain").style.display = "block";
+  document.getElementById("step2DivMain").classList.add("hidden");
+  document.getElementById("step3DivMain").classList.remove("hidden");
+  document.getElementById("step3DivMain").classList.add("activeStep");
+  document.getElementById("mainBody").classList.remove("bodyBackground2");
+  document.getElementById("mainBody").classList.add("bodyBackground3");
+}
+
+function arduinoConnectSucces() {
+  document.getElementById("step3DivMain").classList.add("hidden");
+  document.getElementById("step4DivMain").classList.remove("hidden");
+  document.getElementById("mainBody").classList.remove("bodyBackground3");
+  document.getElementById("mainBody").classList.add("bodyBackground2");
 }
 
 function step5() {

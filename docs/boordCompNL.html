@@ -15,6 +15,17 @@
     </style>
   </head>
   <body id="mainBody" class="iniBodyClass noExtra bodyBackground1">
+    <div id="timeDisplay" class="timeDisplayClass visHidden">
+      <div class="timeText">
+        zuurstof over:
+      </div>
+      <div class="timeTime">
+        12
+      </div>
+      <div class="timeText2">
+        minuten
+      </div>
+    </div>
     <div id="step1DivMain" class="step1DivMainClass">
       <button onclick="step1()" class="buttonClass welkomButton">
         <div id="insideButton" class="insideButtonClass">
@@ -25,8 +36,9 @@
       </button>
     </div>
     <div id="step2DivMain" class="step2DivMainClass hidden">
-      <button onclick="step2Backspace()" id="step2Backspace" class="buttonClass backspaceButton">
-        <div id="inputeStep2" class="inputeStep2Class">Code hier invullen</div>
+      <div class="step2Text">Voer wachtwoord in</div>
+      <button onclick="step2Backspace()" id="step2Backspace" class="buttonClassInputMain backspaceButton">
+        <div id="inputeStep2" class="inputeStep2Class"></div>
         <div class="insideButtonClass" >&#8592;</div>
       </button>
       <div class="borderStep2"></div>
@@ -82,32 +94,23 @@
         </div>
       </button>
     </div>
-    <div id="step3DivMain" class="step3DivMainClass noExtra" style="display: none">
+    <div id="step3DivMain" class="step3DivMainClass noExtra hidden">
       <div id="step3DivText" class="step3DivTextClass">
-        <p class="step3TextClass">
-          uitleg
-          </br>
-          </br>
-          de motor heeft stroom nodig om op te starten.
-          </br>
-          </br>
-          vind en verbind de energie bal met de groene draad
-        </p>
-      </div>
-      <div class="step3Values">
-        <p class="step3ValuesP">
-          Stroom op Motor
-        </p>
-        <p id="display3">
-          initial value
-        </p>
+          de spaceaccu is leeg<br>
+          vind en verbind<br>
+          de energie bal<br>
+          met de groene draad<br>
+          om het schip<br>
+          te kunnen starten.
       </div>
     </div>
-    <div id="step4DivMain" class="step2DivMainClass" style="display: none">
-      <button onclick="step4Backspace()" id="step4Backspace" class="buttonClass backspaceButton">
+    <div id="step4DivMain" class="step2DivMainClass hidden">
+      <div class="step2Text">Coördinaten</div>
+      <button onclick="step4Backspace()" id="step4Backspace" class="buttonClassInputMain2 backspaceButton">
         <div class="step4PreInput">M-</div>
-        <div id="inputeStep4" class="inputeStep4Class">Coördinaten</div>
-        <div class="insideButtonClass" >&#8592;</div>
+        <div id="inputeStep4" class="inputeStep4Class"></div>
+        <div class="inputeStep4HeightFix">&#160;</div>
+        <div class="insideButtonClass displacedBackspace" >&#8592;</div>
       </button>
       <div class="borderStep2"></div>
       <button onclick="input2(1)" class="buttonClass">
