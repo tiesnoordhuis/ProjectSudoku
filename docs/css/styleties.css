@@ -89,6 +89,13 @@
   font-family: 'Roboto_Mone';
 }
 
+.step4Text{
+  padding-left: 20px;
+  font-size: 40px;
+  color: white;
+  font-family: 'Roboto_Mone';
+}
+
 .insideButtonClass {
   font-size: 40px;
   color: white;
@@ -148,7 +155,8 @@
 .inputeStep4Class {
   display: inline-block;
   padding: 15px 0px 15px 0px;
-  width: 395px;
+  margin-left: 20px;
+  width: 375px;
   font-size: 40px;
   color: white;
   font-family: 'Roboto_Mone';
@@ -167,8 +175,8 @@
 }
 
 .step4PreInput {
-  left: 0px;
-  top: 0px;
+  left: 730px;
+  top: 455px;
   display: inline-block;
   font-size: 40px;
   color: white;
@@ -225,7 +233,7 @@
 }
 
 .step5DivMainClass {
-  padding: 450px 0px 0px 800px;
+  padding: 220px 0px 0px 800px;
 }
 
 .step6DivMainClass {
@@ -235,8 +243,7 @@
 }
 
 .step5textClass {
-  background-color: black;
-  font-size: 40px;
+  font-size: 50px;
   color: white;
   font-family: 'Roboto_Mone';
   text-align: center;
@@ -245,7 +252,6 @@
 }
 
 .step7textClass {
-  background-color: black;
   font-size: 40px;
   color: white;
   font-family: 'Roboto_Mone';

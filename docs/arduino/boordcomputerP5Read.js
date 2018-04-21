@@ -118,12 +118,6 @@ function updateAvgMax(averageValue) {
   }
 }
 
-function locationEnteredSucces() {
-  arduinoRotateSet();
-  setTimeout(displayGif, 3000);
-  setTimeout(arduinoServoOff, 12000);
-}
-
 // When you click on the screen, the server sends H or L out the serial port
 function mouseReleased() {
   return

@@ -84,8 +84,8 @@ function input2(x) {
   if (document.getElementById("step4DivMain").className == "step2DivMainClass inputCheck") {
     console.log("code input not allowed");
   } else {
-    if (document.getElementById("inputeStep4").innerHTML == "Coördinaten" || document.getElementById("inputeStep4").innerHTML == "fout, probeer opnieuw") {
-      document.getElementById("inputeStep4").innerHTML = ""
+    if (document.getElementById("inputeStep4").innerHTML == "fout, probeer opnieuw") {
+      document.getElementById("inputeStep4").innerHTML = "";
     }
     var xInput = x.toString();
     document.getElementById("inputeStep4").innerHTML += xInput;
@@ -189,9 +189,15 @@ function arduinoConnectSucces() {
 }
 
 function step5() {
-  document.getElementById("step4DivMain").style.display = "none";
-  document.getElementById("step5DivMain").style.display = "block";
+  document.getElementById("step4DivMain").classList.add("hidden");
+  document.getElementById("step5DivMain").classList.remove("hidden");
   locationEnteredSucces();
+}
+
+function locationEnteredSucces() {
+  arduinoRotateSet();
+  setTimeout(displayGif, 3000);
+  setTimeout(arduinoServoOff, 12000);
 }
 
 function clickPlanet() {
@@ -220,7 +226,7 @@ function skipTo6() {
 
 function displayGif() {
   document.getElementById("step5DivMain").classList.add("hidden");
-  document.getElementById("step5DivMain").style.display = "none";
+  document.getElementById("timeDisplay").classList.add("hidden");
   document.getElementById("step6DivMain").classList.remove("hidden");
   document.getElementById("step6DivMain").classList.add("spaceTravel");
   setTimeout(step7, 7000);
@@ -228,5 +234,6 @@ function displayGif() {
 
 function step7() {
   document.getElementById("step6DivMain").classList.add("hidden");
+  document.getElementById("timeDisplay").classList.remove("hidden");
   document.getElementById("step7DivMain").classList.remove("hidden");
 }
