@@ -19,11 +19,6 @@ function checkCode() {
   }
 }
 
-function newScreen() {
-  document.getElementById("planetPicker").style.display = "block";
-  document.getElementById("body").style.backgroundImage = "url('images/placeholderPlanetPicker.jpg')";
-}
-
 function hide(n) {
   if (n = 1) {
     document.getElementById("codeInput").style.display = "none";
@@ -38,9 +33,9 @@ function circle1() {
 window.onload = frameIni();
 
 function frameIni() {
-  document.getElementById("planetPicker").style.display = "none";
   var width = screen.width;
   var height = screen.height;
+  console.log("window loaded with width: " + width + " and height: " + height);
 }
 
 function showDebug() {
@@ -48,13 +43,15 @@ function showDebug() {
   document.getElementById("debugDiv").innerHTML += "De height is " + screen.height;
 }
 
-function intro() {
-  document.getElementById("welcomeDivMain").style.display = "none";
-  setTimeout(loadStep2, 1000);
+function step1() {
+  document.getElementById("step1DivMain").classList.add("hidden");
+  setTimeout(loadStep2, 100);
 }
 
 function loadStep2() {
-  document.getElementById("step2DivMain").style.display = "block";
+  document.getElementById("step2DivMain").classList.remove("hidden");
+  document.getElementById("mainBody").classList.remove("bodyBackground1");
+  document.getElementById("mainBody").classList.add("bodyBackground2");
 }
 
 function input(x) {
@@ -68,7 +65,7 @@ function input(x) {
     var xInput = x.toString();
     document.getElementById("inputeStep2").innerHTML += xInput;
     if (document.getElementById("inputeStep2").innerHTML.length > 3) {
-      if (document.getElementById("inputeStep2").innerHTML == "4823") {
+      if (document.getElementById("inputeStep2").innerHTML == "4827") {
         noInputStep2(0);
         document.getElementById("inputeStep2").style.backgroundColor = "green";
         setTimeout(step2CorrectCode, 200);

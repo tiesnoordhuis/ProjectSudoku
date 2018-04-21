@@ -1,23 +1,11 @@
-* {
-  font-family: 'Roboto_Mone';
-  font-size: .75em;
-}
-
 .bodyBackground1{
   background-image: url("../images/spacehuds/spacehuds/spacehudBegin.jpg");
   background-repeat: no-repeat;
 }
 
-.mainTop {
-  margin: 0px 0px 0px 0px;
-  padding: 0px 0px 0px 0px;
-  border: 0px 0px 0px 0px;
-}
-
-.background {
-  background-image: url("../images/boordcomputer1.jpg");
+.bodyBackground2{
+  background-image: url("../images/spacehuds/spacehuds/spacehud1.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .codeInput {
@@ -43,7 +31,7 @@
   height: 40px;
 }
 
-.introBodyClass {
+.iniBodyClass {
   width: 1920px;
   height: 1080px;
   background-color: #014f01;
@@ -55,8 +43,8 @@
   border: 0px 0px 0px 0px;
 }
 
-.welcomeDivMainClass {
-  padding: 510px 0px 0px 659px;
+.step1DivMainClass {
+  padding: 471px 0px 0px 727px;
 }
 
 .step2DivMainClass {
@@ -66,6 +54,7 @@
 .insideButtonClass {
   font-size: 40px;
   color: white;
+  font-family: 'Roboto_Mone';
 }
 
 .buttonClass {
@@ -80,8 +69,8 @@
   border-width: 8px;
   border-style: solid;
   border-color: white;
-  border-radius: 40px 20px;
-  height: 140px;
+  border-radius: 60px 20px;
+  height: 220px;
 }
 
 .borderStep2 {
@@ -191,7 +180,6 @@
   width: 400px;
   padding: 20px 20px 20px 20px;
 }
-
 
 .step4DivMainClass {
 
