@@ -298,3 +298,12 @@ function minutePassed() {
     console.log("TIME UP!");
   }
 }
+
+function restart() {
+  servoReset();
+  setTimeout(reloadPage, 10000);
+}
+
+function reloadPage() {
+  location.reload();
+}

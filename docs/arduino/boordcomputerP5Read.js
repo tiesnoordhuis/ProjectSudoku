@@ -160,3 +160,9 @@ function resetToBegin() {
   atArduinoStep = false;
   setTimeout(arduinoServoOff,3000);
 }
+
+function servoReset() {
+  serial.write(97);
+  serial.write(101);
+  setTimeout(arduinoServoOff,9000);
+}
