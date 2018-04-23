@@ -49,6 +49,8 @@ body:after{
   color: white;
   font-family: 'Roboto_Mone';
   padding-left: 45px;
+  text-align: center;
+  width: 85px;
 }
 
 .codeInput {
@@ -115,6 +117,25 @@ body:after{
   text-decoration: none;
   display: inline-block;
   padding: 15px 32px;
+}
+
+.openBoxButtonClass {
+  border-width: 8px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 60px 20px;
+  position: absolute;
+  left: 170px;
+  top: 310px;
+}
+
+.openBoxButtonTextClass {
+  font-size: 50px;
+  color: white;
+  font-family: 'Roboto_Mone';
+  text-align: center;
+  width: 280px;
+  height: 80px;
 }
 
 .buttonClassInputMain {
@@ -259,16 +280,10 @@ body:after{
 }
 
 .step5textClass {
-  font-size: 50px;
-  color: white;
-  font-family: 'Roboto_Mone';
-  text-align: center;
-  width: 200px;
-  padding: 20px 20px 20px 20px;
-}
-
-.step7textClass {
-  font-size: 40px;
+  position: absolute;
+  left: 750px;
+  top: 420px;
+  font-size: 60px;
   color: white;
   font-family: 'Roboto_Mone';
   text-align: center;
@@ -276,8 +291,22 @@ body:after{
   padding: 20px 20px 20px 20px;
 }
 
-.step4DivMainClass {
+.step7DivMainClass {
+  position: absolute;
+  left: 600px;
+  top: 350px;
+}
 
+.step7textClass {
+  font-size: 40px;
+  color: white;
+  font-family: 'Roboto_Mone';
+  text-align: center;
+  width: 730px;
+}
+
+.smallerFont {
+  font-size: 35px;
 }
 
 .hidden {

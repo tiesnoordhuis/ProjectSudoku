@@ -19,8 +19,8 @@
       <div class="timeText">
         zuurstof over:
       </div>
-      <div class="timeTime">
-        12
+      <div id="timeTime" class="timeTime">
+        15
       </div>
       <div class="timeText2">
         minuten
@@ -173,15 +173,20 @@
     <div id="step6DivMain" class="step6DivMainClass hidden">
 
     </div>
-    <div id="step7DivMain" class="step5DivMainClass hidden">
-      <p id="step5Text" class="step7textClass">
+    <div id="step7DivMain" class="step7DivMainClass hidden">
+      <p id="step7Text" class="step7textClass">
         Veilig Geland!<br>
-        open het slot!<br>
+        Open het slot<br>
       </p>
-      <p class="step7textClass">
-        Druk hier om sleutel transporatie<br>
-        opslag doos  slot te openen
+      <p class="step7textClass smallerFont">
+        Druk hier om sleutel transporatie
+        opslag doos slot te openen
       </p>
+      <button onclick="openBoxArduino()" class="buttonClass openBoxButtonClass">
+        <div class="openBoxButtonTextClass">
+          Open doos
+        </div>
+      </button>
     </div>
     <script src="js/codeties.js"></script>
   </body>

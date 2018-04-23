@@ -255,8 +255,12 @@ function step5() {
 }
 
 function locationEnteredSucces() {
-  arduinoRotateSet();
   setTimeout(displayGif, 3000);
+}
+
+function openBoxArduino() {
+  console.log("button druk voor arduino om doosje te openen");
+  arduinoRotateSet();
   setTimeout(arduinoServoOff, 12000);
 }
 
@@ -276,4 +280,21 @@ function step7() {
   document.getElementById("step6DivMain").classList.add("hidden");
   document.getElementById("timeDisplay").classList.remove("hidden");
   document.getElementById("step7DivMain").classList.remove("hidden");
+}
+
+function startTimer() {
+  for (var i = 0; i < 15; i++) {
+    n = ((i + 1) * 1000);
+    setTimeout(minutePassed, n)
+  }
+}
+
+function minutePassed() {
+  var timeStr = document.getElementById("timeTime").innerHTML;
+  var timeNum = Number(timeStr);
+  timeNum --;
+  document.getElementById("timeTime").innerHTML = timeNum;
+  if (timeNum === 0) {
+    console.log("TIME UP!");
+  }
 }
