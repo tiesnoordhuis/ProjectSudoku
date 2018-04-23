@@ -81,12 +81,7 @@ function input(x) {
 
 function input2(x) {
   console.log(document.getElementById("inputeStep4").innerHTML.length);
-  if (document.getElementById("step4DivMain").className == "step2DivMainClass inputCheck") {
-    console.log("code input not allowed");
-  } else {
-    if (document.getElementById("inputeStep4").innerHTML == "fout, probeer opnieuw") {
-      document.getElementById("inputeStep4").innerHTML = "";
-    }
+  if (document.getElementById("inputeStep4").classList.contains("inputAllowed")) {
     var xInput = x.toString();
     document.getElementById("inputeStep4").innerHTML += xInput;
     if (document.getElementById("inputeStep4").innerHTML.length > 3) {
@@ -100,42 +95,107 @@ function input2(x) {
         setTimeout(step4FoutCode, 1000);
       }
     }
+  } else if (document.getElementById("inputeStep4").classList.contains("allowResumeInput")) {
+    if (document.getElementById("inputeStep4").classList.contains("inputResumed")) {
+      console.log("input already resumed");
+    } else {
+      resumeInput();
+      document.getElementById("inputeStep4").classList.add("inputResumed");
+      console.log("input resumed");
+    }
   }
 }
 
+var n = 0;
+
 function step4FoutCode() {
-  document.getElementById("inputeStep4").style.backgroundColor = "transparent";
-  document.getElementById("inputeStep4").innerHTML = "fout, probeer opnieuw";
-  noInputStep4(1);
+  document.getElementById("inputeStep4").innerHTML = "";
+  document.getElementById("inputeStep4").style.backgroundColor = "transparent"
+  document.getElementById("step4PreInput").classList.add("visHidden");
+  document.getElementById("inputeStep4").classList.add("visHidden");
+  document.getElementById("displacedBackspace").classList.add("visHidden");
+  document.getElementById("step4WrongInputMsg").classList.remove("visHidden");
+  document.getElementById("step4WrongInputMsg").innerHTML = step4ErrorMsg(n);
+  n++;
+  if (document.getElementById("inputeStep4").classList.contains("newInputSkip")) {
+    document.getElementById("inputeStep4").classList.remove("newInputSkip");
+  }
+  setTimeout(allowResumeInput, 200);
+  setTimeout(resumeInput, 4000);
+  setTimeout(stopAllowResumeInput, 4001);
+}
+
+function allowResumeInput() {
+  document.getElementById("inputeStep4").classList.add("allowResumeInput");
+}
+
+function stopAllowResumeInput() {
+  document.getElementById("inputeStep4").classList.remove("allowResumeInput");
+  document.getElementById("inputeStep4").classList.remove("inputResumed");
+}
+
+function step4ErrorMsg(n) {
+  var errorMsgArray = [];
+  errorMsgArray[0] = "Niet genoeg space benzine, kies iets anders";
+  errorMsgArray[1] = "Planeet is ontploft, kies een andere bestemming";
+  errorMsgArray[2] = "Er zit een Zwart gat in de weg, ga eerst naar andere planeet";
+  errorMsgArray[3] = "Daar gaan we altijd al heen, kies liever iets anders";
+  errorMsgArray[4] = "Sorry, die bestemming is verboden door big brother";
+  errorMsgArray[5] = "Die planeet ken ik niet";
+  errorMsgArray[6] = "Upgrade naar premium space travel om daar heen te gaan";
+  if (n > 6) {
+    return "fout!";
+  }
+  return errorMsgArray[n];
+}
+
+function resumeInput() {
+  if (document.getElementById("inputeStep4").classList.contains("inputResumed")) {
+
+  } else {
+    noInputStep4(1);
+    document.getElementById("inputeStep4").innerHTML = "";
+    document.getElementById("step4PreInput").classList.remove("visHidden");
+    document.getElementById("inputeStep4").classList.remove("visHidden");
+    document.getElementById("displacedBackspace").classList.remove("visHidden");
+    document.getElementById("step4WrongInputMsg").classList.add("visHidden");
+    document.getElementById("step4WrongInputMsg").innerHTML = "";
+  }
 }
 
 function step4CorrectCode() {
   document.getElementById("inputeStep4").style.backgroundColor = "transparent";
   document.getElementById("inputeStep4").innerHTML = "succes";
-  noInputStep4(1);
   setTimeout(step5, 1000);
 }
 
 function noInputStep4(x) {
-  if (x == 0) {
-    document.getElementById("step4DivMain").className = "step2DivMainClass inputCheck";
-  } else if (x == 1) {
-    document.getElementById("step4DivMain").className = "step2DivMainClass";
+  console.log("input check set: " + x);
+  if (x == 1) {
+    document.getElementById("inputeStep4").classList.add("inputAllowed");
+  } else if (x == 0) {
+    document.getElementById("inputeStep4").classList.remove("inputAllowed");
   }
 }
 
 function step4Backspace() {
-  var x = document.getElementById("inputeStep4").innerHTML.slice(0, -1);
-  if (document.getElementById("step4DivMain").className == "step2DivMainClass inputCheck") {
+  if (document.getElementById("inputeStep4").classList.contains("inputAllowed")) {
+    var x = document.getElementById("inputeStep4").innerHTML.slice(0, -1);
+    if (document.getElementById("inputeStep4").innerHTML.length < 1) {
 
-  } else if (document.getElementById("inputeStep4").innerHTML == "Coördinaten" || document.getElementById("inputeStep4").innerHTML == "fout, probeer opnieuw") {
-
-  } else if (document.getElementById("inputeStep4").innerHTML.length < 1) {
-
-  } else {
+    } else {
     document.getElementById("inputeStep4").innerHTML = x;
     console.log(x);
     }
+  } else if (document.getElementById("inputeStep4").classList.contains("allowResumeInput")) {
+    if (document.getElementById("inputeStep4").classList.contains("inputResumed")) {
+      console.log("input already resumed");
+    } else {
+      resumeInput();
+      document.getElementById("inputeStep4").classList.add("inputResumed");
+      console.log("input resumed");
+    }
+  }
 }
 
 function step2FoutCode() {
@@ -202,26 +262,6 @@ function locationEnteredSucces() {
 
 function clickPlanet() {
   console.log("click");
-}
-
-function skipTo3() {
-  document.getElementById("step3DivMain").style.display = "block";
-  document.getElementById("welcomeDivMain").style.display = "none";
-}
-
-function skipTo4() {
-  document.getElementById("step4DivMain").style.display = "block";
-  document.getElementById("welcomeDivMain").style.display = "none";
-}
-
-function skipTo5() {
-  document.getElementById("step5DivMain").style.display = "block";
-  document.getElementById("welcomeDivMain").style.display = "none";
-}
-
-function skipTo6() {
-  document.getElementById("step6DivMain").style.display = "block";
-  document.getElementById("welcomeDivMain").style.display = "none";
 }
 
 function displayGif() {

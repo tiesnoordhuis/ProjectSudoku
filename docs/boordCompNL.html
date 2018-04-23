@@ -10,7 +10,7 @@
     <style>
       @font-face {
           font-family: "Roboto_Mone";
-          src:url("D:/ties/projecten/github/ProjectSudoku/docs/css/Roboto_Mono/RobotoMono-Regular.ttf");
+          src:url("C:/ties/projecten/github/ProjectSudoku/docs/css/Roboto_Mono/RobotoMono-Regular.ttf");
       }
     </style>
   </head>
@@ -107,10 +107,10 @@
     <div id="step4DivMain" class="step2DivMainClass hidden">
       <div class="step4Text">Voer bestemming in</div>
       <button onclick="step4Backspace()" id="step4Backspace" class="buttonClassInputMain2 backspaceButton">
-        <div class="step4PreInput">M-</div>
-        <div id="inputeStep4" class="inputeStep4Class"></div>
-        <div class="inputeStep4HeightFix">&#160;</div>
-        <div class="insideButtonClass displacedBackspace" >&#8592;</div>
+        <div id="step4PreInput" class="step4PreInput">M-</div>
+        <div id="inputeStep4" class="inputeStep4Class inputAllowed"></div>
+        <div id="displacedBackspace" class="insideButtonClass displacedBackspace" >&#8592;</div>
+        <div id="step4WrongInputMsg" class="step4WrongInputMsgClass visHidden"></div>
       </button>
       <div class="borderStep2"></div>
       <button onclick="input2(1)" class="buttonClass">
