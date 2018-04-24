@@ -260,6 +260,7 @@ function hint4() {
   document.getElementById("hintButton").classList.add("hidden");
   document.getElementById("hintText").classList.remove("hidden");
   document.getElementById("hintText").classList.add("hintText");
+  document.getElementById("hintText").classList.remove("hintText2");
   document.getElementById("hintText").classList.remove("hintText3");
   document.getElementById("mainBody").classList.remove("bodyBackground2Hint");
   document.getElementById("mainBody").classList.add("bodyBackground2HintGiven");
