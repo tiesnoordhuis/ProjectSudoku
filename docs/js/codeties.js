@@ -5,30 +5,6 @@ comments
 geschreven door Ties Noordhuis
 
 */
-function checkCode() {
-  var x = document.getElementById("codeInput").value;
-  if (x == "18") {
-    document.getElementById("titleDiv").innerHTML = "succes!";
-    hide(1);
-    document.getElementById("body").style.backgroundImage = "url('images/boordcomputer2.jpg')";
-    setTimeout(newScreen, 500);
-  } else {
-    document.getElementById("titleDiv").innerHTML = "FOUT!";
-    document.getElementById("codeInput").value = "";
-    document.getElementById("body").style.backgroundImage = "url('images/boordcomputer3.jpg')";
-  }
-}
-
-function hide(n) {
-  if (n = 1) {
-    document.getElementById("codeInput").style.display = "none";
-    document.getElementById("codeInputButton").style.display = "none";
-  }
-}
-
-function circle1() {
-  document.getElementById("debugDiv").innerHTML = "circle 1 is selected";
-}
 
 window.onload = frameIni();
 
@@ -36,11 +12,6 @@ function frameIni() {
   var width = screen.width;
   var height = screen.height;
   console.log("window loaded with width: " + width + " and height: " + height);
-}
-
-function showDebug() {
-  document.getElementById("debugDiv").innerHTML = "De width is " + screen.width + "</br>";
-  document.getElementById("debugDiv").innerHTML += "De height is " + screen.height;
 }
 
 function step1() {
@@ -60,7 +31,7 @@ function input(x) {
   if (document.getElementById("step2DivMain").className == "step2DivMainClass inputCheck") {
     console.log("code input not allowed");
   } else {
-    if (document.getElementById("inputeStep2").innerHTML == "Code hier invullen" || document.getElementById("inputeStep2").innerHTML == "fout, probeer opnieuw") {
+    if (document.getElementById("inputeStep2").innerHTML == "Code hier invullen" || document.getElementById("inputeStep2").innerHTML == "probeer opnieuw") {
       document.getElementById("inputeStep2").innerHTML = ""
     }
     var xInput = x.toString();
@@ -109,6 +80,8 @@ function input2(x) {
 var n = 0;
 
 function step4FoutCode() {
+  showHint();
+  hintGiven = true;
   document.getElementById("inputeStep4").innerHTML = "";
   document.getElementById("inputeStep4").style.backgroundColor = "transparent"
   document.getElementById("step4PreInput").classList.add("visHidden");
@@ -200,8 +173,103 @@ function step4Backspace() {
 
 function step2FoutCode() {
   document.getElementById("inputeStep2").style.backgroundColor = "transparent";
-  document.getElementById("inputeStep2").innerHTML = "fout, probeer opnieuw";
+  document.getElementById("inputeStep2").innerHTML = "probeer opnieuw";
   noInputStep2(1);
+  showHint();
+  hintGiven = true;
+}
+
+function timerShowHint() {
+  if (document.getElementById("step3DivMain").classList.contains("hidden") === false) {
+    showHint();
+    hintGiven = true;
+  }
+}
+
+var hintGiven = false;
+
+function showHint() {
+  if (hintGiven) {
+    return;
+  }
+  document.getElementById("hintDiv").classList.remove("hidden");
+  document.getElementById("hintText").classList.add("hidden");
+  document.getElementById("hintButton").classList.remove("hidden");
+  document.getElementById("hintButtonSecond").classList.add("hidden");
+  if (document.getElementById("step2DivMain").classList.contains("hidden") === false) {
+    document.getElementById("mainBody").classList.remove("bodyBackground2");
+    document.getElementById("mainBody").classList.add("bodyBackground2Hint");
+    document.getElementById("hintButton").innerHTML = "Hint";
+    document.getElementById("hintButton").onclick = function() {hint1()};
+  } else if (document.getElementById("step3DivMain").classList.contains("hidden") === false) {
+    document.getElementById("mainBody").classList.remove("bodyBackground3");
+    document.getElementById("mainBody").classList.add("bodyBackground3Hint");
+    document.getElementById("hintButton").innerHTML = "Hint";
+    document.getElementById("hintButton").onclick = function() {hint2()};
+  } else if (document.getElementById("step4DivMain").classList.contains("hidden") === false) {
+    document.getElementById("mainBody").classList.remove("bodyBackground2");
+    document.getElementById("mainBody").classList.add("bodyBackground2Hint");
+    document.getElementById("hintButton").innerHTML = "Hint";
+    document.getElementById("hintButton").onclick = function() {hint3()};
+  } else if (document.getElementById("step7DivMain").classList.contains("hidden") === false) {
+    document.getElementById("mainBody").classList.remove("bodyBackground2");
+    document.getElementById("mainBody").classList.add("bodyBackground2Hint");
+    document.getElementById("hintButton").innerHTML = "Hint";
+    document.getElementById("hintButton").onclick = function() {hint4()};
+  }
+}
+
+function hint1() {
+  document.getElementById("hintButton").classList.add("hidden");
+  document.getElementById("hintText").classList.remove("hidden");
+  document.getElementById("mainBody").classList.remove("bodyBackground2Hint");
+  document.getElementById("mainBody").classList.add("bodyBackground2HintGiven");
+  document.getElementById("hintText").innerHTML = "Boeken bevatten meer kennis dan je denk";
+  console.log("hint1");
+}
+
+function hint2() {
+  document.getElementById("hintButton").classList.add("hidden");
+  document.getElementById("hintText").classList.remove("hidden");
+  document.getElementById("mainBody").classList.remove("bodyBackground3Hint");
+  document.getElementById("mainBody").classList.add("bodyBackground3HintGiven");
+  document.getElementById("hintText").classList.add("hintText2");
+  document.getElementById("hintText").classList.remove("hintText");
+  document.getElementById("hintButtonSecond").classList.remove("hidden");
+  document.getElementById("hintText").innerHTML = "De energiebol zit veilig achter slot en grendel";
+  console.log("hint2");
+}
+
+function hint2Part2() {
+  document.getElementById("hintText").innerHTML = "De sterren hebben veel kleuren";
+  document.getElementById("hintButtonSecond").classList.add("hidden");
+}
+
+function hint3() {
+  document.getElementById("hintButton").classList.add("hidden");
+  document.getElementById("hintText").classList.remove("hidden");
+  document.getElementById("hintText").classList.remove("hintText");
+  document.getElementById("hintText").classList.add("hintText3");
+  document.getElementById("mainBody").classList.remove("bodyBackground2Hint");
+  document.getElementById("mainBody").classList.add("bodyBackground2HintGiven");
+  document.getElementById("hintText").innerHTML = "De poster staat vol met leuke feitjes over de bestemmingen";
+  console.log("hint3");
+}
+
+function hint4() {
+  document.getElementById("hintButton").classList.add("hidden");
+  document.getElementById("hintText").classList.remove("hidden");
+  document.getElementById("hintText").classList.add("hintText");
+  document.getElementById("hintText").classList.remove("hintText3");
+  document.getElementById("mainBody").classList.remove("bodyBackground2Hint");
+  document.getElementById("mainBody").classList.add("bodyBackground2HintGiven");
+  document.getElementById("hintText").innerHTML = "Bouw een escape route voor de sleutel";
+  console.log("hint4");
+}
+
+function hideHint() {
+  document.getElementById("hintDiv").classList.add("hidden");
+  hintGiven = false;
 }
 
 function step2CorrectCode() {
@@ -223,7 +291,7 @@ function step2Backspace() {
   var x = document.getElementById("inputeStep2").innerHTML.slice(0, -1);
   if (document.getElementById("step2DivMain").className == "step2DivMainClass inputCheck") {
 
-  } else if (document.getElementById("inputeStep2").innerHTML == "Code hier invullen" || document.getElementById("inputeStep2").innerHTML == "fout, probeer opnieuw") {
+  } else if (document.getElementById("inputeStep2").innerHTML == "Code hier invullen" || document.getElementById("inputeStep2").innerHTML == "probeer opnieuw") {
 
   } else if (document.getElementById("inputeStep2").innerHTML.length < 1) {
 
@@ -238,7 +306,11 @@ function step3() {
   document.getElementById("step3DivMain").classList.remove("hidden");
   document.getElementById("step3DivMain").classList.add("activeStep");
   document.getElementById("mainBody").classList.remove("bodyBackground2");
+  document.getElementById("mainBody").classList.remove("bodyBackground2Hint");
+  document.getElementById("mainBody").classList.remove("bodyBackground2HintGiven");
   document.getElementById("mainBody").classList.add("bodyBackground3");
+  hideHint();
+  setTimeout(timerShowHint, 7000);
   console.log("step3");
 }
 
@@ -247,14 +319,21 @@ function arduinoConnectSucces() {
   document.getElementById("step3DivMain").classList.remove("activeStep");
   document.getElementById("step4DivMain").classList.remove("hidden");
   document.getElementById("mainBody").classList.remove("bodyBackground3");
+  document.getElementById("mainBody").classList.remove("bodyBackground3Hint");
+  document.getElementById("mainBody").classList.remove("bodyBackground3HintGiven");
   document.getElementById("mainBody").classList.add("bodyBackground2");
   setAtArduinoStepFalse();
+  hideHint();
   console.log("arduinoConnectSucces");
 }
 
 function step5() {
   document.getElementById("step4DivMain").classList.add("hidden");
   document.getElementById("step5DivMain").classList.remove("hidden");
+  document.getElementById("mainBody").classList.add("bodyBackground2");
+  document.getElementById("mainBody").classList.remove("bodyBackground2Hint");
+  document.getElementById("mainBody").classList.remove("bodyBackground2HintGiven");
+  hideHint();
   locationEnteredSucces();
 }
 
@@ -269,6 +348,8 @@ function openBoxArduino() {
     arduinoRotateSet();
     setTimeout(arduinoServoOff, 12000);
     boxOpen = true;
+    document.getElementById("boxButton").classList.add("openBoxButtonClassClicked");
+    document.getElementById("boxButtonText").classList.add("openBoxButtonClassClicked");
     console.log("opening box");
   }
 }
@@ -289,12 +370,30 @@ function step7() {
   document.getElementById("step6DivMain").classList.add("hidden");
   document.getElementById("timeDisplay").classList.remove("hidden");
   document.getElementById("step7DivMain").classList.remove("hidden");
+  setTimeout(step7ShowHint, 5000);
+}
+
+function step7ShowHint() {
+  document.getElementById("mainBody").classList.remove("bodyBackground2");
+  document.getElementById("mainBody").classList.add("bodyBackground2Hint");
+  showHint();
+  hintGiven = true;
 }
 
 function startTimer() {
-  for (var i = 0; i < 15; i++) {
+  for (var i = 0; i < 900; i++) {
     n = ((i + 1) * 1000);
-    setTimeout(minutePassed, n)
+    setTimeout(secondPassed, n);
+  }
+}
+
+var seconds = 0;
+
+function secondPassed() {
+  seconds++;
+  if (seconds > 59) {
+    minutePassed()
+    seconds = 0;
   }
 }
 
@@ -306,6 +405,18 @@ function minutePassed() {
   if (timeNum === 0) {
     console.log("TIME UP!");
   }
+}
+
+function stopTime() {
+  var timeMin = document.getElementById("timeTime").innerHTML;
+  timeMin = Number(timeMin);
+  timeMin = 15 - timeMin;
+  var timeSec = seconds
+  console.log("time used: " + timeMin + "." + timeSec);
+  document.getElementById("timeTime").classList.add("hidden");
+  document.getElementById("timeEnd").classList.remove("hidden");
+  document.getElementById("timeEnd").innerHTML = timeMin + "." + timeSec;
+  document.getElementById("timeText").innerHTML = "Eind tijd: ";
 }
 
 function restart() {

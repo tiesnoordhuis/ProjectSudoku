@@ -2,7 +2,7 @@ body:after{
     position:absolute; z-index:-10;
     visibility: hidden;
     display: none;
-    content: url(../images/spacehuds/spacehuds/spacehudBegin.jpg) url(../images/spacehuds/spacehuds/spacehud1.jpg) url(../images/spacehuds/spacehuds/spacehud2.jpg);
+    content: url(../images/spacehuds/spacehuds/spacehudBegin.jpg) url(../images/spacehuds/spacehuds/spacehud1.jpg) url(../images/spacehuds/spacehuds/spacehud2.jpg) url(../images/spacehuds/spacehuds/spacehud1Hint.jpg) url(../images/spacehuds/spacehuds/spacehud1HintGiven.jpg) url(../images/spacehuds/spacehuds/spacehud2Hint.jpg) url(../images/spacehuds/spacehuds/spacehud2HintGiven.jpg);
 }
 
 .bodyBackground1{
@@ -15,8 +15,28 @@ body:after{
   background-repeat: no-repeat;
 }
 
+.bodyBackground2Hint{
+  background-image: url("../images/spacehuds/spacehuds/spacehud1Hint.jpg");
+  background-repeat: no-repeat;
+}
+
+.bodyBackground2HintGiven{
+  background-image: url("../images/spacehuds/spacehuds/spacehud1HintGiven.jpg");
+  background-repeat: no-repeat;
+}
+
 .bodyBackground3{
   background-image: url("../images/spacehuds/spacehuds/spacehud2.jpg");
+  background-repeat: no-repeat;
+}
+
+.bodyBackground3Hint{
+  background-image: url("../images/spacehuds/spacehuds/spacehud2Hint.jpg");
+  background-repeat: no-repeat;
+}
+
+.bodyBackground3HintGiven{
+  background-image: url("../images/spacehuds/spacehuds/spacehud2HintGiven.jpg");
   background-repeat: no-repeat;
 }
 
@@ -51,6 +71,85 @@ body:after{
   padding-left: 45px;
   text-align: center;
   width: 85px;
+}
+
+.hintDivClass {
+  position: absolute;
+  left: 1435px;
+  top: 366px;
+  height: 410px;
+  width: 413px;
+}
+
+.hintButton {
+  padding-top: 0px;
+  background-color: transparent;
+  border-width: 5px;
+  border-radius: 130px;
+  border-style: solid;
+  margin-left: 75.5px;
+  margin-top: 76px;
+  width: 260px;
+  height: 260px;
+}
+
+.hintButtonText {
+  font-size: 65px;
+  color: white;
+  font-family: 'Roboto_Mone';
+  text-align: center;
+}
+
+.hintButtonSecondText {
+  font-size: 50px;
+  color: white;
+  font-family: 'Roboto_Mone';
+  text-align: center;
+}
+
+.hintButtonSecondClass {
+  padding-top: 0px;
+  background-color: transparent;
+  border-width: 5px;
+  border-radius: 60px 20px;
+  border-style: solid;
+  margin-left: 37.5px;
+  margin-top: 248px;
+  width: 312px;
+  height: 175px;
+}
+
+.hintText {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  margin: 58px 25px 1px 25px;
+  font-size: 50px;
+  color: white;
+  font-family: 'Roboto_Mone';
+  text-align: center;
+}
+
+.hintText2 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  margin: 10px 25px 1px 25px;
+  font-size: 40px;
+  color: white;
+  font-family: 'Roboto_Mone';
+  text-align: center;
+}
+
+.hintText3 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  margin: 10px 25px 1px 25px;
+  font-size: 50px;
+  color: white;
+  font-family: 'Roboto_Mone';
+  text-align: center;
 }
 
 .codeInput {
@@ -127,6 +226,11 @@ body:after{
   position: absolute;
   left: 170px;
   top: 310px;
+}
+
+.openBoxButtonClassClicked {
+  border-color: grey;
+  color: grey !important;
 }
 
 .openBoxButtonTextClass {

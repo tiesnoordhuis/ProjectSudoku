@@ -16,11 +16,14 @@
   </head>
   <body id="mainBody" class="iniBodyClass noExtra bodyBackground1">
     <div id="timeDisplay" class="timeDisplayClass visHidden">
-      <div class="timeText">
+      <div id="timeText" class="timeText">
         zuurstof over:
       </div>
       <div id="timeTime" class="timeTime">
         15
+      </div>
+      <div id="timeEnd" class="timeTime hidden">
+
       </div>
       <div class="timeText2">
         minuten
@@ -182,10 +185,19 @@
         Druk hier om sleutel transpotatie
         opslag doos slot te openen
       </p>
-      <button onclick="openBoxArduino()" class="buttonClass openBoxButtonClass">
-        <div class="openBoxButtonTextClass">
+      <button id="boxButton" onclick="openBoxArduino()" class="buttonClass openBoxButtonClass">
+        <div id="boxButtonText" class="openBoxButtonTextClass">
           Open doos
         </div>
+      </button>
+    </div>
+    <div id="hintDiv" class="hintDivClass hidden">
+      <button id="hintButton" class="hintButtonText hintButton">
+      </button>
+      <div id="hintText" class="hintText">
+      </div>
+      <button id="hintButtonSecond" class="hintButtonSecondText hintButtonSecondClass hidden" onclick="hint2Part2()">
+        hoe kom ik erbij
       </button>
     </div>
     <script src="js/codeties.js"></script>
