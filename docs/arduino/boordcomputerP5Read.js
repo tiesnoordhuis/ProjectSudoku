@@ -59,7 +59,9 @@ function gotList(thelist) {
 // Called when there is data available from the serial port
 function gotData() {
   var currentString = serial.read();
-  console.log(currentString);
+  if (document.getElementById("step3DivMain").classList.contains("activeStep")) {
+    console.log(currentString);
+  }
   //document.getElementById("display1").innerHTML = currentString;
   updateMax(currentString);
   updateAverage(currentString);
@@ -90,7 +92,7 @@ function updateAverage(currentValue) {
     averageValue += averageString[i];
   }
   averageValue = (averageValue/averageN);
-  document.getElementById("display3").innerHTML = averageValue;
+  //document.getElementById("display3").innerHTML = averageValue;
   updateAvgMax(averageValue);
 }
 
@@ -107,15 +109,20 @@ function updateAvgMax(averageValue) {
     if (averageValue > maxAvg) {
       maxAvg = averageValue
       //document.getElementById("display4").innerHTML = maxAvg;
-      if (maxAvg > 100 && atArduinoStep == true) {
+      if (maxAvg > 100 && atArduinoStep === true) {
         console.log("connected");
         //document.getElementById("inputDom").value = "succes";
-        arduinoConnectSucces();
+          arduinoConnectSucces();
         document.getElementById("step3DivMain").classList.remove("activeStep");
+        atArduinoStep = false;
       }
       maxAvgReset = 0;
     }
   }
+}
+
+function setAtArduinoStepFalse() {
+  atArduinoStep = false;
 }
 
 // When you click on the screen, the server sends H or L out the serial port
@@ -144,12 +151,6 @@ function arduinoServoOff() {
 function resetToBegin() {
   serial.write(97);
   serial.write(101);
-  document.getElementById("welcomeDivMain").style.display = "block";
-  document.getElementById("step2DivMain").style.display = "none";
-  document.getElementById("step3DivMain").style.display = "none";
-  document.getElementById("step4DivMain").style.display = "none";
-  document.getElementById("step5DivMain").style.display = "none";
-  document.getElementById("1inputeStep2").innerHTML = "hier komt de code";
   maxValueReset = 0;
   maxValue = 0;
   maxAvgReset = 0;

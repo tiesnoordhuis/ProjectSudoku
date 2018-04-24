@@ -239,13 +239,17 @@ function step3() {
   document.getElementById("step3DivMain").classList.add("activeStep");
   document.getElementById("mainBody").classList.remove("bodyBackground2");
   document.getElementById("mainBody").classList.add("bodyBackground3");
+  console.log("step3");
 }
 
 function arduinoConnectSucces() {
   document.getElementById("step3DivMain").classList.add("hidden");
+  document.getElementById("step3DivMain").classList.remove("activeStep");
   document.getElementById("step4DivMain").classList.remove("hidden");
   document.getElementById("mainBody").classList.remove("bodyBackground3");
   document.getElementById("mainBody").classList.add("bodyBackground2");
+  setAtArduinoStepFalse();
+  console.log("arduinoConnectSucces");
 }
 
 function step5() {
@@ -258,10 +262,15 @@ function locationEnteredSucces() {
   setTimeout(displayGif, 3000);
 }
 
+var boxOpen = false;
 function openBoxArduino() {
-  console.log("button druk voor arduino om doosje te openen");
-  arduinoRotateSet();
-  setTimeout(arduinoServoOff, 12000);
+  console.log("button pressed to open box");
+  if (boxOpen === false) {
+    arduinoRotateSet();
+    setTimeout(arduinoServoOff, 12000);
+    boxOpen = true;
+    console.log("opening box");
+  }
 }
 
 function clickPlanet() {
