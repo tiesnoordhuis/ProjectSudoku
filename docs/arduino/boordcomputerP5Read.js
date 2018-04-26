@@ -141,7 +141,7 @@ function sendToArduino() {
 
 function arduinoRotateSet() {
   serial.write(97);
-  serial.write(191);
+  serial.write(101);
 }
 
 function arduinoServoOff() {
@@ -164,6 +164,6 @@ function resetToBegin() {
 
 function servoReset() {
   serial.write(97);
-  serial.write(101);
+  serial.write(191);
   setTimeout(arduinoServoOff,9000);
 }
