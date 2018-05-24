@@ -402,6 +402,7 @@ function minutePassed() {
   var timeStr = document.getElementById("timeTime").innerHTML;
   var timeNum = Number(timeStr);
   timeNum --;
+  console.log("time remaining: " + timeNum + " min.");
   document.getElementById("timeTime").innerHTML = timeNum;
   if (timeNum === 0) {
     console.log("TIME UP!");

@@ -109,7 +109,7 @@ function updateAvgMax(averageValue) {
     if (averageValue > maxAvg) {
       maxAvg = averageValue
       //document.getElementById("display4").innerHTML = maxAvg;
-      if (maxAvg > 100 && atArduinoStep === true) {
+      if (maxAvg > 30 && atArduinoStep === true) {
         console.log("connected");
         //document.getElementById("inputDom").value = "succes";
           arduinoConnectSucces();
